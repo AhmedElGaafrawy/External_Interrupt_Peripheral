@@ -37,13 +37,14 @@
 /*
  * INTERRUPT REGISTERS
  */
-
+#ifndef EXT_REG
+#define EXT_REG
 #define MCUCR 	*((volatile u8*) 0x55)
 #define MCUCSR	*((volatile u8*) 0x54)
 #define GICR 	*((volatile u8*) 0x5b)
 #define SREG  	*((volatile u8*) 0x5f)
 #define GIFR  	*((volatile u8*) 0x5a)
-
+#endif
 /*
  * TIMER RESIGTERS
  */

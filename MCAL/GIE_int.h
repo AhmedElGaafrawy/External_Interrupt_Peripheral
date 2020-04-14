@@ -2,7 +2,8 @@
  * GIE_int.h
  *
  *  Created on: Apr 8, 2020
- *      Author: hp
+ *  Version		: 1.0.0
+ *  Author		: Ahmed El-Gaafarwy
  */
 
 #ifndef GIE_INT_H_

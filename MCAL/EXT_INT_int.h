@@ -2,7 +2,8 @@
  * EXT_INT_int.h
  *
  *  Created on: Apr 10, 2020
- *      Author: hp
+ *  Version		: 1.0.3
+ *  Author		: Ahmed El-Gaafarwy
  */
 
 #ifndef MCAL_EXT_INT_INT_H_

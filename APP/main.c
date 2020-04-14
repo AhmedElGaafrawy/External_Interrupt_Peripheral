@@ -2,7 +2,8 @@
  * main.c
  *
  *  Created on: Apr 10, 2020
- *      Author: hp
+ *  Version		: 1.0.8
+ *  Author		: Ahmed El-Gaafarwy
  */
 #include "../LIBRARY/stdTypes.h"
 #include "../LIBRARY/BIT_MATH.h"
@@ -31,18 +32,19 @@ int main (void)
 	struct d k ={123};
 	void*ptr=&k;
 
-	PORTD|=(1<<2);
-	PORTD|=(1<<3);
-	DDRB|=(7<<4);
+	DDRB|=(1<<4);	DDRB|=(1<<5);	DDRB|=(1<<6);
+
 
 	GIE_enuEnable();
 	EXT_INT_enuInit();
+
+	EXT_INT_enuSelectSenceLevel(RISING_EDAGE_INT2);
 	EXT_INT_enuSelectSenceLevel(ANY_LOGICAL_CHANGE_INT0);
 	EXT_INT_enuSelectSenceLevel(RISING_EDAGE_INT1);
-	EXT_INT_enuSelectSenceLevel(FALLING_EDAGE_INT2);
-	EXT_INT_enuCallBackFunction(fun , NULL , INT0);
+
+	EXT_INT_enuCallBackFunction(fun , ptr , INT0);
 	EXT_INT_enuCallBackFunction(fun1 , ptr , INT1);
-	EXT_INT_enuCallBackFunction(fun2 , ptr , INT2);
+	EXT_INT_enuCallBackFunction(fun2 , NULL , INT2);
 
 	while(1)
 	{
@@ -51,7 +53,7 @@ int main (void)
 	return 0;
 }
 
-void fun (void* para)
+void fun2 (void* para)
 {
 	PORTB^=(1<<4);
 }
@@ -62,7 +64,7 @@ void fun1 (void* para)
 	PORTA= p->h;
 	p->g=15;
 }
-void fun2 (void* para)
+void fun (void* para)
 {
 	PORTB^=(1<<6);
 	struct  d *p=(struct d*)para;

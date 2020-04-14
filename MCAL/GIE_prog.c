@@ -2,7 +2,8 @@
  * GIE_prog.c
  *
  *  Created on: Apr 8, 2020
- *      Author: hp
+ *  Version		: 1.0.0
+ *  Author		: Ahmed El-Gaafarwy
  */
 #include "../LIBRARY/stdTypes.h"
 #include "../LIBRARY/BIT_MATH.h"
